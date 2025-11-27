@@ -57,6 +57,7 @@ service:
     - payment
     - shipping
 networks:
-  default: bridge
+  default: 
+  driver: bridge
   name: roboshop
   external: false #true if you have already created a network manually
