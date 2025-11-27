@@ -58,6 +58,6 @@ service:
     - shipping
 networks:
   default: 
-  driver: bridge
-  name: roboshop
-  external: false #true if you have already created a network manually
+    driver: bridge
+    name: roboshop
+    external: false #true if you have already created a network manually
