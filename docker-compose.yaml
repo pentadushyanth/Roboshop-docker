@@ -64,7 +64,7 @@ services:
     - cart
     - user
   frontend:
-    build: ./frontend
+    build: ./Frontend
     image: devopspractise/frontend:v1
     container_name: frontend
     ports:
