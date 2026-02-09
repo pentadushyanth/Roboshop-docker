@@ -4,7 +4,6 @@ services:
       context: ./catalogue
       dockerfile: Dockerfile
     image: testdockerhub28/catalogue:v1
-    container_name: catalogue
     depends_on: 
     - mongodb
   mongodb:
