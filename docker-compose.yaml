@@ -1,7 +1,7 @@
 services:
   mongodb:
     build: ./mongodb
-    image: devopspractise/mongodb:v1
+    image: testdockerhub28/mongodb:v1
     container_name: mongodb
     volumes: 
     - mongodb:/data/db
@@ -9,7 +9,7 @@ services:
     build: 
       context: ./catalogue
       dockerfile: Dockerfile
-    image: devopspractise/catalogue:v1
+    image: testdockerhub28/catalogue:v1
     container_name: catalogue
     depends_on: 
     - mongodb
@@ -20,7 +20,7 @@ services:
     - redis:/data
   mysql:
     build: ./mysql
-    image: devopspractise/mysql:v1
+    image: testdockerhub28/mysql:v1
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
@@ -35,21 +35,21 @@ services:
      
   user:
     build: ./user
-    image: devopspractise/user:v1
+    image: testdockerhub28/user:v1
     container_name: user
     depends_on: 
     - mongodb
     - redis
   cart:
     build: ./cart
-    image: devopspractise/cart:v1
+    image: testdockerhub28/cart:v1
     container_name: cart
     depends_on:
     - redis
     - catalogue
   shipping:
     build: ./shipping
-    image: devopspractise/shipping:v1
+    image: testdockerhub28/shipping:v1
     container_name: shipping
     depends_on:
     - mysql
@@ -57,7 +57,7 @@ services:
   
   payment:
     build: ./payment
-    image: devopspractise/payment:v1
+    image: testdockerhub28/payment:v1
     container_name: payment
     depends_on:
     - rabbitmq
@@ -65,7 +65,7 @@ services:
     - user
   frontend:
     build: ./frontend
-    image: devopspractise/frontend:v1
+    image: testdockerhub28/frontend:v1
     container_name: frontend
     ports:
     - "80:80"
