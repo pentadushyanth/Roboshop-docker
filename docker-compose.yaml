@@ -1,10 +1,4 @@
 services:
-  mongodb:
-    build: ./mongodb
-    image: testdockerhub28/mongodb:v1
-    container_name: mongodb
-    volumes: 
-    - mongodb:/data/db
   catalogue:
     build: 
       context: ./catalogue
@@ -13,6 +7,13 @@ services:
     container_name: catalogue
     depends_on: 
     - mongodb
+  mongodb:
+    build: ./mongodb
+    image: testdockerhub28/mongodb:v1
+    container_name: mongodb
+    volumes: 
+    - mongodb:/data/db
+ 
   redis:
     image: redis:7.0
     container_name: redis
